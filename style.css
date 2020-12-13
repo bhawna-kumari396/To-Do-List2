@@ -1,0 +1,124 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    background-image: radial-gradient(circle, #57eb3e, #78eb37, #92eb33,
+     #a9eb31, #bdeb32, #d7db15, #edca04,
+      #ffb814, #ff8c38, #ff5b67, #ff319d,
+       #f03bd4);
+}
+
+.todo-list {
+    width: 350px;
+    color: rgb(8, 8, 8);
+    font-family: 'Lobster', cursive;
+}
+
+.todo-list header {
+    margin: 0;
+    padding: 1em 0;
+    color: chartreuse;
+    text-align: center;
+    font-size: larger;
+    border-top: 1em solid chartreuse;
+    background-color:  darkblue;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+}
+
+
+.todo-list footer{
+    margin: 0;
+    padding: .7em 0;
+    text-align: center;
+    background-color: cornsilk;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+
+}
+.todo-list .do input[type=checkbox] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+.todo-list .do label {
+    position: relative;
+    display: block;
+    padding: 2em 1em;
+    cursor: pointer;
+    background-color: cornsilk;
+    transition: .3s ease-in-out;
+}
+.todo-list .do label:hover {
+    transform: translateX(-2em);
+    
+}
+.todo-list .do label::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border: 1px solid black;
+    border-radius: 30%;
+    vertical-align: middle;
+    margin-right: .5em;
+
+}
+
+.todo-list .do label::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    background-color: darkblue;
+    transition: .3s ease-in-out;
+}
+
+.todo-list .do label:hover::after {
+    width: 5px;
+}
+
+.todo-list .do label .fa-check{
+       position: absolute;
+       left: .5em;
+       top: .94em;
+       font-size: 1.9em;
+       color: chartreuse;
+       opacity: 0;
+       transition: .3s ease-in-out;
+
+
+}
+.todo-list .do input[type=checkbox]:checked + label .fa-check {
+    opacity: 5;
+}
+.todo-list .do label .label {
+    padding: relative;
+    color: black;
+    transition: .3s ease-in-out;
+}
+
+.todo-list .do input[type=checkbox]:checked + label .label {
+    color: cornflowerblue;
+}
+.todo-list .do label .label::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 100%;
+    top: 50%;
+    height: 1px;
+    background-color: darkcyan;
+    transition: .3s ease-in-out;
+}
+.todo-list .do input[type=checked]:checked + label .label::after{
+    right: 0;
+}
